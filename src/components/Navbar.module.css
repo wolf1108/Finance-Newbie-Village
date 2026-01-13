@@ -1,0 +1,94 @@
+.navbar {
+    border-bottom: 1px solid var(--border);
+    background-color: var(--background);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; Removed to allow full width alignment */
+    height: 64px;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    /* Full width */
+    max-width: 100%;
+    padding: 0 40px;
+    /* Increased padding slightly for aesthetics */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--foreground);
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navLink {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    font-size: 0.95rem;
+}
+
+.navLink:hover {
+    color: var(--primary);
+}
+
+.rightSide {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.authBtn {
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.authBtn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Mobile responsive adjustments if needed */
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+    }
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.username {
+    font-weight: 500;
+    color: var(--foreground);
+}

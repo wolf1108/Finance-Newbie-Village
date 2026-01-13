@@ -1,0 +1,217 @@
+.container {
+    min-height: calc(100vh - 64px);
+    background-color: var(--background);
+    padding: 40px 20px 100px 20px;
+    /* Extra bottom padding for fixed footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.tabs {
+    display: flex;
+    background-color: var(--card-bg);
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tab {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab.active {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.list {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--card-bg);
+    padding: 16px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+}
+
+.rankSection {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.rank {
+    font-size: 1.25rem;
+    font-weight: 800;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.rank.top1 {
+    color: #eab308;
+    font-size: 1.5rem;
+}
+
+.rank.top2 {
+    color: #94a3b8;
+    font-size: 1.5rem;
+}
+
+.rank.top3 {
+    color: #b45309;
+    font-size: 1.5rem;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: 600;
+    color: var(--foreground);
+    font-size: 1rem;
+}
+
+.valueSection {
+    text-align: right;
+}
+
+.value {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+/* User Footer */
+.userFooter {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: var(--foreground);
+    /* Inverted colors for emphasis */
+    color: var(--background);
+    padding: 16px 24px;
+    border-radius: 100px;
+    /* Pill shape */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    border: 1px solid var(--border);
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footerRank {
+    background-color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.footerInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footerValue {
+    text-align: right;
+}
+
+.footerAmount {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--background);
+    /* Ensure contrast */
+}
+
+.footerLabel {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+[data-theme='dark'] .userFooter {
+    background-color: #f3f4f6;
+    /* White-ish in dark mode */
+    color: #111827;
+}
+
+[data-theme='dark'] .footerAmount {
+    color: #111827;
+}
